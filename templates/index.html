@@ -5,9 +5,9 @@
         <title>CheemsBank</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="El banco preferido por los mexicanos" name="description" />
-        <meta content="Tu nombre" name="author" />
+        <meta content="choper" name="author" />
  
-        <link rel="shortcut icon" href="assets/images/site/favicon.png">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/site/favicon.png') }}">
 
         <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <link href="{{ url_for('static', filename='css/icons.min.css') }}" rel="stylesheet" type="text/css" />
@@ -16,7 +16,6 @@
     </head>
 
     <body class="auth-body-bg">
-        
         <div>
             <div class="container-fluid p-0">
                 <div class="row g-0">
@@ -31,7 +30,7 @@
                                         <div class="row justify-content-center">
                                             <div class="col-lg-7">
                                                 <div class="text-center">
-                                                     <img src="assets/images/site/cheems_bank_logo.png" alt="" style="margin-bottom:70px">
+                                                    <img src="{{ url_for('static', filename='images/site/cheems_bank_logo.png') }}" alt="" style="margin-bottom:70px">
                                                     <h4 class="mb-3"> <span class="text-primary-login">El banco preferido de los mexicanos</span> </h4>
                                                     
                                                     <div dir="ltr">
@@ -71,7 +70,7 @@
             
                                         <div class="mt-4">
                                             <div class="mb-3">
-                                                <label for="user-email" class="form-label">Correo electronico</label>
+                                                <label for="user-email" class="form-label">Correo electrónico</label>
                                                 <input type="text" class="form-control" id="user-email" placeholder="Ingresa tu correo">
                                             </div>
                     
@@ -92,7 +91,7 @@
                                     </div>
 
                                     <div class="mt-4 mt-md-5 text-center">
-                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> CheemsBank <br> Desarrollado con <i class="mdi mdi-heart text-danger"></i> por [tu nombre]</p>
+                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> CheemsBank <br> Desarrollado con <i class="mdi mdi-heart text-danger"></i> por [choper]</p>
                                     </div>
                                 </div>
                                 
@@ -106,15 +105,13 @@
 
         <script src="{{ url_for('static', filename='libs/jquery/jquery.min.js') }}"></script>
         <script src="{{ url_for('static', filename='libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='libs/metismenu/metisMenu.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='libs/simplebar/simplebar.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='libs/node-waves/waves.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='libs/metismenu/metisMenu.min.js') }} "></script>
+        <script src="{{ url_for('static', filename='libs/simplebar/simplebar.min.js') }} "></script>
+        <script src="{{ url_for('static', filename='libs/node-waves/waves.min.js') }} "></script>
 
-        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/app.js') }} "></script>
 
         <script src="{{ url_for('static', filename='libs/sweetalert2/sweetalert2.js') }} "></script>
         <script src="{{ url_for('static', filename='js/dogo/signin.js') }} "></script>
-        
-
     </body>
 </html>

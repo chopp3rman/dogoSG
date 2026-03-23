@@ -7,7 +7,7 @@
         <meta content="El banco preferido por los mexicanos" name="description" />
         <meta content="choper" name="author" />
  
-        <link rel="shortcut icon" href="assets/images/site/favicon.png">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/site/favicon.png') }}">
 
         <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <link href="{{ url_for('static', filename='css/icons.min.css') }}" rel="stylesheet" type="text/css" />
@@ -16,7 +16,6 @@
     </head>
 
     <body class="auth-body-bg">
-        
         <div>
             <div class="container-fluid p-0">
                 <div class="row g-0">
@@ -31,7 +30,7 @@
                                         <div class="row justify-content-center">
                                             <div class="col-lg-7">
                                                 <div class="text-center">
-                                                     <img src="assets/images/site/cheems_bank_logo.png" alt="" style="margin-bottom:70px">
+                                                    <img src="{{ url_for('static', filename='images/site/cheems_bank_logo.png') }}" alt="" style="margin-bottom:70px">
                                                     <h4 class="mb-3"> <span class="text-primary-login">El banco preferido de los mexicanos</span> </h4>
                                                     
                                                     <div dir="ltr">
@@ -72,36 +71,37 @@
                                         <div class="mt-4">
                                             <div class="mb-3">
                                                 <label for="user-name" class="form-label">Nombre</label>
-                                                <input type="text" class="form-control" id="user-name" placeholder="Ingresa tu nombre">
-
-                                            <div class="mb-3">
-                                                <label for="user-email" class="form-label">Correo</label>
-                                                <input type="text" class="form-control" id="user-email" placeholder="Ingresa tu correo">
-
-                                            <div class="mb-3">
-                                                <label for="user-password" class="form-label">Contraseña</label>
-                                                <input type="text" class="form-control" id="user-password" placeholder="Ingresa tu contraseña">
+                                                <input type="text" class="form-control" id="user-name" >
                                             </div>
+                                            <div class="mb-3">
+                                                <label for="user-email" class="form-label">Correo electrónico</label>
+                                                <input type="text" class="form-control" id="user-email" >
                                             </div>
                     
                                             <div class="mb-3">
+                                                <label class="form-label">Contraseña</label>
+                                                <div class="input-group auth-pass-inputgroup">
+                                                    <input type="password" class="form-control" id="user-password" aria-label="Password" aria-describedby="password-addon">
+                                                </div>
+                                            </div>
+                                             <div class="mb-3">
                                                 <label class="form-label">Repetir contraseña</label>
                                                 <div class="input-group auth-pass-inputgroup">
-                                                    <input type="password" class="form-control"id="User-repeat-password" aria-label="Password" aria-describedby="password-addon">
+                                                    <input type="password" class="form-control" id="user-repeat-password" aria-label="Password" aria-describedby="password-addon">
                                                 </div>
                                             </div>
                                             <div class="mt-3 d-grid">
-                                                <button class="btn btn-primary waves-effect waves-light" id="btn-register" type="button">Registrarme</button> 
+                                                <button class="btn btn-primary waves-effect waves-light" id="btn-register">Registrarme</button>
                                             </div>
                                            
                                             <div class="mt-5 text-center">
-                                                <p>¿Ya eres cliente? <br><a href="#" class="fw-medium text-primary"> Inicia sesion </a> </p>
+                                                <p>¿Ya eres cliente? <br><a href="#" class="fw-medium text-primary"> Inicia sesión </a> </p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mt-4 mt-md-5 text-center">
-                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> CheemsBank <br> Desarrollado con <i class="mdi mdi-heart text-danger"></i> por [choper]</p>
+                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> CheemsBank <br> Desarrollado con <i class="mdi mdi-heart text-warning"></i> por choper</p>
                                     </div>
                                 </div>
                                 
@@ -115,13 +115,17 @@
 
         <script src="{{ url_for('static', filename='libs/jquery/jquery.min.js') }}"></script>
         <script src="{{ url_for('static', filename='libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='libs/metismenu/metisMenu.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='libs/simplebar/simplebar.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='libs/node-waves/waves.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='libs/metismenu/metisMenu.min.js') }} "></script>
+        <script src="{{ url_for('static', filename='libs/simplebar/simplebar.min.js') }} "></script>
+        <script src="{{ url_for('static', filename='libs/node-waves/waves.min.js') }} "></script>
 
-        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/app.js') }} "></script>
 
-        <script src="{{ url_for('static', filename='js/dogo/signup.js') }}"></script>
+        
+        <script src="{{ url_for('static', filename='libs/sweetalert2/sweetalert2.js') }} "></script>
+
+        <script src="{{ url_for('static', filename='js/dogo/signup.js') }} "></script>
+
 
     </body>
 </html>

@@ -5,6 +5,5 @@ def get_connection():
         host="localhost",
         user="root",
         password="admin",
-        database="gatodb",
-        port=3306
+        database="dogodb",
     )
