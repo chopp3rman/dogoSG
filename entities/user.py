@@ -68,7 +68,7 @@ class User (UserMixin):
             sql = "SELECT id, name, email, password FROM user WHERE email = %s"
             cursor.execute(sql, (email,))
             
-            user =cursor.fetchone()
+            user = cursor.fetchone()
 
             cursor.close()
             connection.close()
