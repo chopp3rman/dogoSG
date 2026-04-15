@@ -24,10 +24,17 @@ class Account():
             rs = cursor.fetchone()
 
             user = User.get_by_id(rs["id_user"])
-            transaction = Transaction.get_transactions_by_account(rs["id"])
+            transactions = Transaction.get_transactions_by_account(rs["id"])
             account = Account(
                 rs["id"],
                 rs["number"],
                 rs["creation_date"],
                 user,
+                transactions
             )
+
+            return account
+        except Exception as ex:
+            print(f"Error saving user:{ex}")
+            return False
+        
