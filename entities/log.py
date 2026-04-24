@@ -18,12 +18,12 @@ class log:
             cursor = connection.cursor()
             sql = "INSERT INTO log (date, user, description, type) VALUES (%s, %s, %s, %s)"
 
-            cursor.execute(sql, (date, user, description, type))
+            cursor.execute(sql, (datetime.now(), user.id, description, type.value))
             connection.commit()
 
             cursor.close()
             connection.close()
             return True
         except Exception as ex:
-            print(f"Error saving user:{ex}")
+            print(f"Error al guardar el log:{ex}")
             return False
