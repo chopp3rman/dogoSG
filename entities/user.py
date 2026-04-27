@@ -1,6 +1,7 @@
 from persistence.db import get_connection
 from werkzeug.security import generate_password_hash, check_password_hash
 from enums.profile import Profile
+from entities.permission import Permission
 import pymysql
 from flask_login import UserMixin
 
@@ -79,13 +80,15 @@ class User (UserMixin):
             connection.close()
 
             if user and check_password_hash(user["password"], password):
+
+                permissions = Permission.get_by_user(user["id"])
                 return User(
                     user["id"],
                     user["name"],
                     user["email"],
                     "",
                     user["profile"],
-                    "",
+                    permissions,
                     user["is_active"],
                     ""
                 )
@@ -109,11 +112,16 @@ class User (UserMixin):
             connection.close()
 
             if user:
+                permissions = Permission.get_by_user(user["id"])
                 return User(
                     user["id"],
                     user["name"],
                     user["email"],
-                    user["password"]
+                    user["password"],
+                    user["profile"],
+                    permissions,
+                    user["is_active"],
+                    
                 )
             
             return None
